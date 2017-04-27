@@ -2,9 +2,18 @@
 library(httr)
 library(RMySQL)
 
-####Indicar API key!
 
-api_key<-"XXX"
+##Activar y validar Args
+args<-commandArgs(TRUE)
+
+if (length(args)==0) {
+  stop("At least one argument must be supplied (NYT - API TOKEN)", call.=FALSE)
+}
+
+
+####Indicar API key!
+api_key<-args[1]
+
 path_gr<-"/path/donde/dejar/graficas/"
 sample2 <- GET(paste0("https://api.nytimes.com/svc/mostpopular/v2/mostviewed/World/1.json?api-key=", api_key))
 content(sample2)
