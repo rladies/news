@@ -2,6 +2,7 @@
 
 const express = require('express');
 const app = express();
+const dummyData = require('./public/demo.json')
 
 const port = process.env.PORT || 3000
 
@@ -22,11 +23,14 @@ app.get('/api/v1/news', (req, res)=> {
     res.header("Access-Control-Allow-Methods" , "GET");
     res.header("Access-Control-Allow-Headers" , "Origin, X-Requested-With, Content-Type, Accept");
     //RESPONSE
-    res.send(`welcome to my API !
-    start: ${start}
-    end: ${end}
-    size: ${size}
-    page: ${page}`)
+    res.send(JSON.stringify(dummyData))
+    
+    console.log(`welcome to my API !
+    - start: ${start}
+    - end: ${end}
+    - size: ${size}
+    - page: ${page}`)
+    
     
 })
 
