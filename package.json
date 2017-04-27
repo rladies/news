@@ -1,0 +1,31 @@
+{
+  "name": "news",
+  "version": "1.0.0",
+  "description": "news",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rladies/news.git"
+  },
+  "author": {
+    "name": "Rladies",
+    "url":"https://github.com/Rladies"
+  },
+  "contributors": [
+    {"name": "OSWeekends",
+    "url": "https://github.com/OSWeekends"
+    },
+    {
+      "name": "Adalab",
+      "url": "https://github.com/adalab"
+    }
+    ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OSWeekends/news/issues"
+  },
+  "homepage": "https://github.com/OSWeekends/news#readme"
+}
