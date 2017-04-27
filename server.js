@@ -12,10 +12,16 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/v1/news', (req, res)=> {
+    
     let start = req.query.start || "by default"
     let end = req.query.end || "by default"
     let size = req.query.size || "by default"
     let page = req.query.page || "by default"
+    //CORS
+    res.header("Access-Control-Allow-Origin" , "*");
+    res.header("Access-Control-Allow-Methods" , "GET");
+    res.header("Access-Control-Allow-Headers" , "Origin, X-Requested-With, Content-Type, Accept");
+    //RESPONSE
     res.send(`welcome to my API !
     start: ${start}
     end: ${end}
