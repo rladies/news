@@ -12,20 +12,26 @@
   },
   "author": {
     "name": "Rladies",
-    "url":"https://github.com/Rladies"
+    "url": "https://github.com/Rladies"
   },
   "contributors": [
-    {"name": "OSWeekends",
-    "url": "https://github.com/OSWeekends"
+    {
+      "name": "OSWeekends",
+      "url": "https://github.com/OSWeekends"
     },
     {
       "name": "Adalab",
       "url": "https://github.com/adalab"
     }
-    ],
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/OSWeekends/news/issues"
   },
-  "homepage": "https://github.com/OSWeekends/news#readme"
+  "homepage": "https://github.com/OSWeekends/news#readme",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-debug": "3.1.0",
+    "gulp-eslint": "3.0.1"
+  }
 }
