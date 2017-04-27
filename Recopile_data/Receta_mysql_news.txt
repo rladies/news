@@ -1,0 +1,43 @@
+#Receta mysql
+apt-get install mysql-server
+apt-get install  r-cran-rmysql libmariadbclient-dev
+
+
+#Nos conectamos a la bbdd
+mysql -u root -p
+create database noticias;
+use noticias;
+
+#Creamos las tablas
+
+CREATE TABLE articulo (
+	id_noticia int not null auto_increment,
+	fecha varchar(20),
+	titulo varchar(200),
+	texto_noticia varchar(5000),
+	url varchar(200),
+	primary key (id_noticia)
+);
+
+CREATE TABLE tags (
+	id_tag int not null auto_increment,
+	id_noticia int,
+	visitas varchar(2000),
+	primary key (id_tag)
+);
+
+
+#En Rstudio
+#Cargamos paquetes
+install.packages("RMySQL")
+library(RMySQL)
+
+#Nos conectamos
+mydb = dbConnect(MySQL(), user='root', password='root', host='localhost')
+query<-dbSendQuery(mydb, "show databases;")
+sdata <- fetch(query, n=10)
+query<-dbSendQuery(mydb, "use noticias;")
+
+#Insertar:
+query<-dbSendQuery(mydb, "insert into articulo (fecha, titulo, texto_noticia, url)  values ('3-10-1984', 'desdeRstudio','asdf','asdfas');")
+
