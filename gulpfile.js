@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 gulp.task('lint', function() {
     var filesToLint = [
-        '**/*.{html,js}',
+        '**/*.js',
         '!tests/protractor.conf.js',
         '!dist/**/*',
         '!docs/**/*',
