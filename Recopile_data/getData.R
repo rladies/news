@@ -56,16 +56,16 @@ getInfotag<-function(tag,fecha){
     result[is.na(result)] <- 0
     ressult<-as.numeric(result)
     ressult[is.na(ressult)] <- 0
-    outlier_values <- boxplot.stats(ressult)$out
-    jpeg(paste0(path_gr,fecha,res,'rplot.jpg'))
-    plot(result, main=paste0("Visitas Wikipedia ultimos 60 dias para ",res))
-    dev.off()
-    if(length(outlier_values)>0){
-      jpeg(paste0(path_gr,fecha,res,'boxplot.jpg'))
-      boxplot(outlier_values, main=paste0("Boxplot de busquedas en Wikipedia de ",res), boxwex=0.1)
-      mtext(paste("Outliers: ", paste(outlier_values, collapse=", ")), cex=0.6)
-      dev.off()
-    }
+    #outlier_values <- boxplot.stats(ressult)$out
+    #jpeg(paste0(path_gr,fecha,res,'rplot.jpg'))
+    #plot(result, main=paste0("Visitas Wikipedia ultimos 60 dias para ",res))
+    #dev.off()
+    #if(length(outlier_values)>0){
+    #  jpeg(paste0(path_gr,fecha,res,'boxplot.jpg'))
+    #  boxplot(outlier_values, main=paste0("Boxplot de busquedas en Wikipedia de ",res), boxwex=0.1)
+    #  mtext(paste("Outliers: ", paste(outlier_values, collapse=", ")), cex=0.6)
+    #  dev.off()
+    #}
     noticia_impacto<-1
   }
   paste(ressult, collapse=",")
