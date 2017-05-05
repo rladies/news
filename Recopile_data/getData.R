@@ -14,7 +14,7 @@ if (length(args)==0) {
 ####Indicar API key!
 api_key<-args[1]
 
-path_gr<-"/path/donde/dejar/graficas/"
+path_gr<-"/plots/"
 sample2 <- GET(paste0("https://api.nytimes.com/svc/mostpopular/v2/mostviewed/World/1.json?api-key=", api_key))
 content(sample2)
 str(content(sample2))
@@ -37,7 +37,7 @@ colnames(data)<-c("fecha","titulo","abstract","url","tags")
 data<-data.frame(lapply(data, as.character), stringsAsFactors=FALSE)
 
 #Nos conectamos a la bbdd
-mydb = dbConnect(MySQL(), user='root', password='root', host='localhost')
+mydb = dbConnect(MySQL(), user='root', password='root', host='127.0.0.1')
 query<-dbSendQuery(mydb, "show databases;")
 data <- fetch(query, n=10)
 query<-dbSendQuery(mydb, "use noticias;")
