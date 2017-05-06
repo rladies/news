@@ -13,6 +13,10 @@ if (length(args) == 0) {
 # Indicar API key!
 api_key <- args[1]
 
+sample2 <- GET(paste0("https://api.nytimes.com/svc/mostpopular/v2/mostviewed/World/1.json?api-key=", api_key))
+content(sample2)
+str(content(sample2))
+
 # Accediendo a los tags de noticias Convertimos el json en dataframe a procesar
 getDataDromNews <- function(kk) {
   info <- character(0)
