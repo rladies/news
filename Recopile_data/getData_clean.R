@@ -32,7 +32,7 @@ data <- data.frame(lapply(data, as.character), stringsAsFactors = FALSE)
 
 # Nos conectamos a la bbdd
 mydb = dbConnect(MySQL(), user = "root", password = "root", host = "127.0.0.1")
-
+query<-dbSendQuery(mydb, "use noticias;")
 
 getInfotag <- function(tag, fecha) {
   ## Revisamos el tema de las comas
