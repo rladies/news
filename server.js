@@ -46,7 +46,7 @@ var rRocks = new Scheduled({
     pattern: "* */4 * * * *",
     task: function() {
         exec(`Rscript Recopile_data/getData.R ${config.nytToken}`, function(error, stdout, stderr) {
-            console.log(`---- Proceso hijo (Recopile_data/getData.R) terminado! -----`);
+            console.log(`---- Proceso hijo (Recopile_data/getData_clean.R) terminado! -----`);
             if (stdout) {
                 console.log('stdout: ' + stdout);
             }
