@@ -1,5 +1,11 @@
 var config = {
-    "nytToken": ""
+    "nytToken": "",
+    database: {
+        host: "",
+        user: "",
+        password: "",
+        database: ""
+    }
 };
 
 module.exports = config;
