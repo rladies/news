@@ -68,6 +68,7 @@ GROUP BY id_noticia;`;
                 
                 row.sentimiento = 0; // until sentiment implementation
                 row.visitas = dataVisita;
+                return row;
             });
             res.send(JSON.stringify(cleanResults));
         }
