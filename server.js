@@ -43,7 +43,7 @@ app.get('/api/v1/news', (req, res)=> {
     - page: ${page}`);
     
     // MySQL Concept - TEST
-    dbConnection.connect();
+    //dbConnection.connect();
 
     var baseQuery = `SELECT articulo.id_noticia, articulo.fecha, articulo.titulo, articulo.texto_noticia, articulo.url, GROUP_CONCAT(CONCAT(tags.id_tag, ':{', tags.visitas, '}'))
 FROM articulo
@@ -52,11 +52,14 @@ ON articulo.id_noticia=tags.id_noticia
 GROUP BY id_noticia;`;
 
     dbConnection.query(baseQuery, function (error, results, fields) {
-        if (error) throw error;
-        console.log('The solution is: ', results);
+        if (error){
+            res.status(500).send({ error: 'Something failed!' });
+        } else {
+            res.send(JSON.stringify(results))
+        }
     });
 
-    dbConnection.end();
+    //dbConnection.end();
     
 })
 
