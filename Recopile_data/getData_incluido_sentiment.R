@@ -80,7 +80,7 @@ getTagNoticia <- function(midata) {
   no2 <- gsub("\\(", " ", no2)
   no2 <- gsub(" ", "+", no2)
   tags <- unlist(strsplit(no2, ";"))
-  sentiment<-get_sentiment(midata[3], method = "syuzhet")
+  sentiment<-rescale(get_sentiment(get_tokens(midata[3])))
   query <- dbSendQuery(mydb,
                        paste0("insert into articulo (fecha, titulo, texto_noticia, url,sentiment_value)  values ('",
                               fecha, "', '", midata[2], "','",
