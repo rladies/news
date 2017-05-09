@@ -38,7 +38,7 @@ app.get('/api/v1/news', (req, res)=> {
     
     // MySQL Basic Query
 
-    const baseQuery = `SELECT articulo.id_noticia, articulo.fecha, articulo.titulo, articulo.texto_noticia, articulo.url, GROUP_CONCAT(CONCAT(tags.id_tag, ':{', tags.visitas, '}')) AS visitas
+    const baseQuery = `SELECT articulo.sentiment_value, articulo.id_noticia, articulo.fecha, articulo.titulo, articulo.texto_noticia, articulo.url, GROUP_CONCAT(CONCAT(tags.name_tag, ':{', tags.visitas, '}')) AS visitas
 FROM articulo
 INNER JOIN tags
 ON articulo.id_noticia=tags.id_noticia
@@ -66,7 +66,6 @@ GROUP BY id_noticia;`;
                     }
                 });
                 
-                row.sentimiento = 0; // until sentiment implementation
                 row.visitas = dataVisita;
                 return row;
             });
@@ -86,7 +85,7 @@ const rRocks = new Scheduled({
     id: "rRocks",
     pattern: "00 10 * * * *", // 10:00 Every day.
     task() {
-        exec(`Rscript Recopile_data/getData_clean.R ${config.nytToken}`, (error, stdout, stderr) => {
+        exec(`Rscript Recopile_data/getData_incluido_sentiment.R ${config.nytToken}`, (error, stdout, stderr) => {
             console.log(`---- Proceso hijo (Recopile_data/getData_clean.R) terminado! -----`);
             if (stdout) console.log(`stdout: ${stdout}`);
             if (stderr) console.log(`stderr: ${stderr}`);
