@@ -1,4 +1,111 @@
-body {
-    background: blue;
-    color: white;
+body{
+	font-family: 'BioRhyme', serif;
+}
+
+h1{
+	font-family: 'Merriweather', serif;
+	color: black;
+	padding-right: 425px;
+}
+
+
+.primary-bar{
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+ background-color: white;
+ height: 100px;
+}
+
+.elements-primary-bar{
+ text-decoration: none;
+ padding: 15px;
+ color: grey;
+}
+
+.trademark{
+ display: flex;
+ justify-content: space-between;
+}
+
+.logo{
+ width: 300px;
+ height: 150px;
+}
+
+.team1, .team2{
+ display: flex;
+ justify-content: space-around;
+
+}
+
+.personal-info{
+ max-width: 200px;
+}
+
+.profile-picture {
+ height: 200px;
+ width: 200px;
+ background-color: grey;
+ background-size: cover;
+ background-position: center;
+ border-radius: 50%;
+}
+
+.team{
+ margin: 100px 0;
+}
+
+.info-logo{
+ display: flex;
+ justify-content: space-around;
+}
+
+.ny-logo, .wikipedia-logo{
+ width: 300px;
+ height: 250px;
+}
+
+.section-title{
+ text-transform: uppercase;
+ text-align: center;
+ color: #B404AE;
+}
+
+.general-footer{
+ background-color: white;
+}
+
+.footer-wrapper{
+ padding: 15px;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+}
+
+.footer-list-wrapper{
+ padding: 0;
+ list-style: none;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.logo-footer{
+ width: 25px;
+ padding-right: 15px;
+}
+
+.footer-text{
+ margin: 0 auto;
+ margin-right: 25px;
+ font-size: 15px;
+}
+
+#team {
+ background-color: white;
+}
+
+#info{
+ background-color: white;
 }

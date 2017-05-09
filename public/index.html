@@ -1,11 +1,147 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Título</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wiki News</title>
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme|Merriweather" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <h1>Hello world !</h1>
+  <section class="primary-bar">
+    <h1>Wiki News</h1>
+    <a href="#notices" class="elements-primary-bar">Noticias</a>
+    <a href="#team" class="elements-primary-bar">Equipo</a>
+    <a href="#info" class="elements-primary-bar">Info</a>
+  </section>
+
+  <div>
+    <canvas id="myChart" width="400"></canvas>
+  </div>
+
+
+  <section id="team">
+    <h2 class="section-title">Team</h2>
+
+    <div class="trademark">
+     <a href="https://rladies.org/">
+      <img class="rladies-logo logo" src="images/rladies.png" alt="rladies logo">
+     </a>
+     <a href="http://adalab.es/">
+      <img class="adalab-logo logo" src="images/adalab.png" alt="adalab logo">
+     </a>
+    <a href="http://osweekends.com/">
+     <img class="ows-logo logo" src="images/osweekends.jpg" alt="oswekends logo">
+    </a>
+ </div>
+
+ <div class="team">
+  <div class="team1">
+
+    <div class="personal-wrapper">
+      <a href="https://twitter.com/txutxina91">
+        <div class="profile-picture" style="background-image: url('images/rocio-pic.jpg')"></div>
+      </a>
+      <h3>Rocío Gómez</h3>
+      <p>Adalab</p>
+      <p class="personal-info">Desarrollo Web Front-End en M4V</p>
+    </div>
+
+    <div class="personal-wrapper">
+      <a href="">
+        <div class="profile-picture"   style="background-image: url('images/ines.jpg')"></div>
+      </a>
+      <h3>Inés Huertas</h3>
+      <p>R-Ladies</p>
+      <p>Data Science y Co-founder en Datatons</p>
+    </div>
+
+    <div class="personal-wrapper">
+      <a href="https://twitter.com/LaetitiaCarquet">
+        <div class="profile-picture"   style="background-image: url('images/carquet.jpg')"></div>
+      </a>
+      <h3>Laetitia Carquet</h3>
+      <p>OSWeekends</p>
+      <p class="personal-info">Futura ex-formadora de profesorado tirándose a la piscina del desarrollo web para ser ex futura programadora</p>
+    </div>
+  </div>
+  <div class="team2">
+    <div class="personal-wrapper">
+      <a href="">
+        <div class="profile-picture"   style="background-image: url('images/leticia.jpg')" ></div>
+      </a>
+      <h3>Leticia Martín-Fuertes</h3>
+      <p>R-ladies</p>
+      <p class="personal-info">Lingüista computacional en Bitext</p>
+    </div>
+    <div class="personal-wrapper">
+      <a href="https://twitter.com/kom_256">
+        <div class="profile-picture" style="background-image: url('images/ulises.png')" ></div>
+      </a>
+      <h3>Ulises</h3>
+      <p>OSWeekends</p>
+      <p class="personal-info">Desarrollador Full Stack JavaScript y Python especializado en Internet of Things con hardware libre  como Arduino y Raspberry Pi.
+      </p>
+    </div>
+    <div class="personal-wrapper">
+      <a href="https://twitter.com/ana_alcalde1">
+        <div class="profile-picture" style="background-image: url('images/ana-pic.jpg')" ></div>
+      </a>
+      <p>Adalab</p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section id="info">
+  <h2 class="section-title">Info</h2>
+  <div class="info-logo">
+    <img class="ny-logo" src="images/nytimes.png" alt="">
+    <img class="wikipedia-logo" src="images/wikipedia.png" alt="">
+  </div>
+</section>
+
+<footer class="general-footer">
+
+  <ul class="footer-wrapper">
+    <li class="footer-list-wrapper">
+     <p class="footer-text">R-Ladies</p>
+     <a href="https://twitter.com/RLadiesMAD/" >
+      <img src="images/icono.png" alt="Logo de twitter" class="logo-footer">
+     </a>
+     <a href="https://rladies.org/">
+      <img src="images/link.png" alt="Logo de link" class="logo-footer" >
+     </a>
+    </li>
+
+    <li class="footer-list-wrapper">
+     <p class="footer-text">OSW</p>
+     <a href="https://twitter.com/os_weekends" alt="Logo de twitter">
+      <img src="images/icono.png" class="logo-footer">
+     </a>
+     <a href="http://osweekends.com/">
+      <img src="images/link.png" alt="Logo de link" class="logo-footer">
+     </a>
+
+    </li>
+
+    <li class="footer-list-wrapper">
+     <p class="footer-text">Adalab</p>
+     <a href="https://twitter.com/AdaLab_Digital" alt="Logo de twitter">
+      <img src="images/icono.png" class="logo-footer">
+     </a>
+     <a href="http://adalab.es/">
+      <img src="images/link.png" alt="Logo de link" class="logo-footer">
+     </a>
+    </li>
+    Meetup 11 Mayo 2017  &copy;
+  </ul>
+</footer>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="scripts/main.js"></script>
 </body>
 </html>
