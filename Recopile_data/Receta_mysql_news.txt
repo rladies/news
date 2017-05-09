@@ -3,6 +3,9 @@ apt-get install mysql-server
 apt-get install  r-cran-rmysql libmariadbclient-dev
 
 
+# ALTER TABLE articulo ADD sentiment_value int;
+# alter table tags ADD name_tag varchar(60);
+
 #Nos conectamos a la bbdd
 mysql -u root -p
 create database noticias;
@@ -10,12 +13,14 @@ use noticias;
 
 #Creamos las tablas
 
+
 CREATE TABLE articulo (
 	id_noticia int not null auto_increment,
 	fecha varchar(20),
 	titulo varchar(200),
 	texto_noticia varchar(5000),
 	url varchar(200),
+	sentiment_value int,
 	primary key (id_noticia)
 );
 
@@ -23,8 +28,13 @@ CREATE TABLE tags (
 	id_tag int not null auto_increment,
 	id_noticia int,
 	visitas varchar(2000),
+	name_tag varchar(60),
 	primary key (id_tag)
 );
+
+##Si version anterior desplegada unicamente añadir
+## ALTER TABLE articulo ADD sentiment_value int;
+## alter table tags ADD name_tag varchar(60);
 
 
 #En Rstudio
