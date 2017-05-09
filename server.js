@@ -38,7 +38,7 @@ app.get('/api/v1/news', (req, res)=> {
     
     // MySQL Basic Query
 
-    const baseQuery = `SELECT articulo.id_noticia, articulo.fecha, articulo.titulo, articulo.texto_noticia, articulo.url, GROUP_CONCAT(CONCAT(tags.id_tag, ':{', tags.visitas, '}')) AS visitas
+    const baseQuery = `SELECT articulo.sentimiento, articulo.id_noticia, articulo.fecha, articulo.titulo, articulo.texto_noticia, articulo.url, GROUP_CONCAT(CONCAT(tags.name_tag, ':{', tags.visitas, '}')) AS visitas
 FROM articulo
 INNER JOIN tags
 ON articulo.id_noticia=tags.id_noticia
@@ -66,7 +66,6 @@ GROUP BY id_noticia;`;
                     }
                 });
                 
-                row.sentimiento = 0; // until sentiment implementation
                 row.visitas = dataVisita;
                 return row;
             });
