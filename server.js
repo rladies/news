@@ -86,7 +86,7 @@ const rRocks = new Scheduled({
     id: "rRocks",
     pattern: "00 10 * * * *", // 10:00 Every day.
     task() {
-        exec(`Rscript Recopile_data/getData_clean.R ${config.nytToken}`, (error, stdout, stderr) => {
+        exec(`Rscript Recopile_data/getData_incluido_sentiment.R ${config.nytToken}`, (error, stdout, stderr) => {
             console.log(`---- Proceso hijo (Recopile_data/getData_clean.R) terminado! -----`);
             if (stdout) console.log(`stdout: ${stdout}`);
             if (stderr) console.log(`stderr: ${stderr}`);
