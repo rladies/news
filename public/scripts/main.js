@@ -1,6 +1,6 @@
 var oReq = new XMLHttpRequest()
 oReq.addEventListener("load", reqListener)
-  oReq.open("GET", "https://raw.githubusercontent.com/rladies/news/master/public/demo.json")
+  oReq.open("GET", "/api/v1/news")
 oReq.send()
 
 // var title = document.getElementById('followers')
@@ -12,12 +12,24 @@ oReq.send()
 // }
 
 function sentimentBars(sentiment){
-  if (sentiment <0.2 ) return "rgba(255, 99, 132, 0.2)";
-  if (sentiment <0.8) return 'rgba(255, 159, 64, 0.2)';
+  if (sentiment < 0 ) return "rgba(255, 99, 132, 0.2)";
+  if (sentiment > 0) return 'rgba(75, 192, 192, 0.2)';
 
-  return 'rgba(75, 192, 192, 0.2)';
+  return 'rgba(255, 159, 64, 0.2)';
 }
 
+
+function stimateVisits (rawVisits) {
+  var total = 0
+  rawVisits.forEach(function(row){
+    console.log(row)
+    if(row.valores && row.valores.length === 60){
+      total += parseInt(row.valores[59])
+    }
+    
+  })
+  return total;
+}
 
 function reqListener () {
   var data = JSON.parse(this.responseText);
@@ -28,10 +40,9 @@ function reqListener () {
   var numVis = [];
   for (var i = 0; i < data.length; i++) {
     titles.push(data[i].titulo);
-    backgroundColors.push(sentimentBars(data[i].sentimiento));
+    backgroundColors.push(sentimentBars(data[i].sentiment_value));
     borderColors.push('rgba(255,99,132,1)');
-    numVis.push(data[i].visitas);
-
+    numVis.push(stimateVisits(data[i].visitas));
   }
   
   var ctx = document.getElementById("myChart");
