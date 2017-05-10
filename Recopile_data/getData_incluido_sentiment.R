@@ -1,11 +1,9 @@
 # Obtenemos principales noticias de NYT
-# ALTER TABLE articulo ADD sentiment_value int;
-# alter table tags ADD name_tag varchar(60);
+
 
 library(httr)
 library(RMySQL)
 library(syuzhet)
-
 
 
 ## Activar y validar Args
@@ -68,8 +66,7 @@ getInfotag <- function(tag, fecha) {
 
 insertTag <- function(res_tags, id_not) {
   query <- dbSendQuery(mydb,
-                       paste0("insert into tags (id_noticia, visitas, name_tag)  values ('",
-                              id_not, "', '", res_tags[[2]], "','",res_tags[[1]],"');"))
+                       paste0("insert into tags (id_noticia, visitas, name_tag)  values ('",id_not, "', '", res_tags[[2]], "','",res_tags[[1]],"');"))
 }
 
 
@@ -81,10 +78,11 @@ getTagNoticia <- function(midata) {
   no2 <- gsub(" ", "+", no2)
   tags <- unlist(strsplit(no2, ";"))
   sentiment<-get_sentiment(midata[3], method = "syuzhet")
+  scale_sent<-mean(rescale(get_sentiment(get_tokens(midata[3])))) #Escalado
   query <- dbSendQuery(mydb,
-                       paste0("insert into articulo (fecha, titulo, texto_noticia, url,sentiment_value)  values ('",
+                       paste0("insert into articulo (fecha, titulo, texto_noticia, url,sentiment_value,name_tag_scale)  values ('",
                               fecha, "', '", midata[2], "','",
-                              midata[3], "','", midata[4], "','",sentiment,"');"))
+                              midata[3], "','", midata[4], "','",sentiment,"','",scale_sent,"');"))
   # Nos quedamos con el id
   query <- dbSendQuery(mydb, "SELECT id_noticia FROM articulo ORDER BY id_noticia DESC LIMIT 1;")
   id_not <- fetch(query, n = 10)
