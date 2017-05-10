@@ -77,8 +77,8 @@ getTagNoticia <- function(midata) {
   no2 <- gsub("\\(", " ", no2)
   no2 <- gsub(" ", "+", no2)
   tags <- unlist(strsplit(no2, ";"))
-  sentiment<-get_sentiment(midata[3], method = "syuzhet")
-  scale_sent<-mean(rescale(get_sentiment(get_tokens(midata[3])))) #Escalado
+  sentiment<-get_sentiment(gsub("[.]","",midata[3]), method = "syuzhet")
+  scale_sent<-mean(rescale(get_sentiment(get_tokens(gsub("[.]","",midata[3]))))) #Escalado
   query <- dbSendQuery(mydb,
                        paste0("insert into articulo (fecha, titulo, texto_noticia, url,sentiment_value,name_tag_scale)  values ('",
                               fecha, "', '", midata[2], "','",
