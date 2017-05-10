@@ -21,6 +21,7 @@ CREATE TABLE articulo (
 	texto_noticia varchar(5000),
 	url varchar(200),
 	sentiment_value int,
+	name_tag_scale int,
 	primary key (id_noticia)
 );
 
@@ -35,6 +36,7 @@ CREATE TABLE tags (
 ##Si version anterior desplegada unicamente añadir
 ## ALTER TABLE articulo ADD sentiment_value int;
 ## alter table tags ADD name_tag varchar(60);
+## alter table articulo ADD name_tag_scale varchar(60);
 
 
 #En Rstudio
