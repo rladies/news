@@ -79,10 +79,11 @@ getTagNoticia <- function(midata) {
   tags <- unlist(strsplit(no2, ";"))
   sentiment<-get_sentiment(gsub("[.]","",midata[3]), method = "syuzhet")
   scale_sent<-mean(rescale(get_sentiment(get_tokens(gsub("[.]","",midata[3]))))) #Escalado
+  scale_sent_<-ifelse(is.nan(scale_sent), 0, scale_sent)
   query <- dbSendQuery(mydb,
                        paste0("insert into articulo (fecha, titulo, texto_noticia, url,sentiment_value,name_tag_scale)  values ('",
                               fecha, "', '", midata[2], "','",
-                              midata[3], "','", midata[4], "','",sentiment,"','",scale_sent,"');"))
+                              midata[3], "','", midata[4], "','",sentiment,"','",scale_sent_,"');"))
   # Nos quedamos con el id
   query <- dbSendQuery(mydb, "SELECT id_noticia FROM articulo ORDER BY id_noticia DESC LIMIT 1;")
   id_not <- fetch(query, n = 10)
