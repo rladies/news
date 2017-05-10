@@ -46,7 +46,7 @@ getInfotag <- function(tag, fecha) {
   tam <- unlist(strsplit(tag, ","))
   #Comprobamos las comas!
   res <- ifelse(length(tam) > 1, paste0(gsub("+", "", tam[2]), tam[1]), tam)
-  res_tag <- GET(paste0("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageviews&titles=", res))
+  res_tag <- GET(paste0("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageviews&titles=", gsub('\n', '',res)))
   noticia_impacto <- 0  #= no tiene impacto en visitas, 1 si que las tiene
   ressult <- NULL
   if (names(content(res_tag)$query$pages) == "-1") {
