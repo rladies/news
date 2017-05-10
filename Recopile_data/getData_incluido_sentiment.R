@@ -66,7 +66,7 @@ getInfotag <- function(tag, fecha) {
 
 insertTag <- function(res_tags, id_not) {
   query <- dbSendQuery(mydb,
-                       paste0("insert into tags (id_noticia, visitas, name_tag)  values ('",id_not, "', '", res_tags[[2]], "','",gsub("[.]","",res_tags[[1]]),"');"))
+                       paste0("insert into tags (id_noticia, visitas, name_tag)  values ('",id_not, "', '", res_tags[[2]], "','",gsub("[']","",res_tags[[1]]),"');"))
 }
 
 
