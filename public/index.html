@@ -11,71 +11,72 @@
 </head>
 
 <body>
-  <section class="primary-bar">
+  <header class="primary-bar">
     <h1>Wiki News</h1>
-    <a href="#notices" class="elements-primary-bar">Noticias</a>
-    <a href="#team" class="elements-primary-bar">Equipo</a>
-    <a href="#info" class="elements-primary-bar">Info</a>
-  </section>
+    <nav role="navigation">
+      <a href="#notices" class="elements-primary-bar">Noticias</a>
+      <a href="#team" class="elements-primary-bar">Equipo</a>
+      <a href="#information" class="elements-primary-bar">Info</a>
+    </nav>
+  </header>
 
-  <div>
+<main>
+<div id="notices">
     <canvas id="myChart" width="400"></canvas>
-  </div>
+</div>
 
-
-  <section id="team">
+ <section class="general-team"  id="team">
     <h2 class="section-title">Team</h2>
 
     <div class="trademark">
-     <a href="https://rladies.org/">
-      <img class="rladies-logo logo" src="images/rladies.png" alt="rladies logo">
+     <a href="https://rladies.org/" target="_blank">
+      <img class="rladies-logo" src="images/rladies.png" alt="rladies logo">
      </a>
-     <a href="http://adalab.es/">
-      <img class="adalab-logo logo" src="images/adalab.png" alt="adalab logo">
+     <a href="http://adalab.es/" target="_blank">
+      <img class="adalab-logo" src="images/adalab.png" alt="adalab logo">
      </a>
-    <a href="http://osweekends.com/">
-     <img class="ows-logo logo" src="images/osweekends.jpg" alt="oswekends logo">
+    <a href="http://osweekends.com/" target="_blank">
+     <img class="ows-logo" src="images/osweekends.jpg" alt="oswekends logo">
     </a>
  </div>
 
- <div class="team">
-  <div class="team1">
-
+ 
+  <div class="team">
     <div class="personal-wrapper">
-      <a href="https://twitter.com/txutxina91">
+      <a href="https://twitter.com/txutxina91" target="_blank">
         <div class="profile-picture" style="background-image: url('images/rocio-pic.jpg')"></div>
       </a>
       <h3>Rocío Gómez</h3>
       <p>Adalab</p>
-      <p class="personal-info">Desarrollo Web Front-End en M4V</p>
+      <p class="personal-info">Desarrollo Web Front-End en M4V.</p>
     </div>
 
     <div class="personal-wrapper">
-      <a href="">
-        <div class="profile-picture"   style="background-image: url('images/ines.jpg')"></div>
+      <a href="https://twitter.com/quierodata" target="_blank">
+        <div class="profile-picture" style="background-image: url('images/ines.jpg')"></div>
       </a>
       <h3>Inés Huertas</h3>
       <p>R-Ladies</p>
-      <p>Data Science y Co-founder en Datatons</p>
+      <p class="personal-info">Data Science y Co-founder en Datatons.</p>
     </div>
 
     <div class="personal-wrapper">
-      <a href="https://twitter.com/LaetitiaCarquet">
-        <div class="profile-picture"   style="background-image: url('images/carquet.jpg')"></div>
+      <a href="https://twitter.com/LaetitiaCarquet" target="_blank">
+        <div class="profile-picture" style="background-image: url('images/carquet.jpg')"></div>
       </a>
       <h3>Laetitia Carquet</h3>
       <p>OSWeekends</p>
-      <p class="personal-info">Futura ex-formadora de profesorado tirándose a la piscina del desarrollo web para ser ex futura programadora</p>
+      <p class="personal-info">Futura ex-formadora de profesorado tirándose a la piscina del desarrollo web para ser ex futura programadora.</p>
     </div>
   </div>
-  <div class="team2">
+  <div class="team">
     <div class="personal-wrapper">
-      <a href="">
-        <div class="profile-picture"   style="background-image: url('images/leticia.jpg')" ></div>
+      <a href="https://twitter.com/nimbusaeta" target="_blank">
+        <div class="profile-picture" style="background-image: url('images/leticia.jpg')"></div>
       </a>
       <h3>Leticia Martín-Fuertes</h3>
       <p>R-ladies</p>
-      <p class="personal-info">Lingüista computacional en Bitext</p>
+      <p class="personal-info">Lingüista computacional en Bitext.</p>
     </div>
     <div class="personal-wrapper">
       <a href="https://twitter.com/kom_256">
@@ -83,29 +84,28 @@
       </a>
       <h3>Ulises</h3>
       <p>OSWeekends</p>
-      <p class="personal-info">Desarrollador Full Stack JavaScript y Python especializado en Internet of Things con hardware libre  como Arduino y Raspberry Pi.
-      </p>
+      <p class="personal-info">Desarrollador Full Stack JavaScript y Python especializado en Internet of Things con hardware libre  como Arduino y Raspberry Pi.</p>
     </div>
     <div class="personal-wrapper">
-      <a href="https://twitter.com/ana_alcalde1">
+      <a href="https://twitter.com/ana_alcalde1" target="_blank">
         <div class="profile-picture" style="background-image: url('images/ana-pic.jpg')" ></div>
       </a>
+      <h3>Ana</h3>
       <p>Adalab</p>
+      <p class="personal-info">Desarrollo Web front-end en Tecnilógica.</p>
     </div>
   </div>
+ </section>
 
-</div>
-</section>
-
-<section id="info">
+ <section class="info" id="information">
   <h2 class="section-title">Info</h2>
   <div class="info-logo">
-    <img class="ny-logo" src="images/nytimes.png" alt="">
-    <img class="wikipedia-logo" src="images/wikipedia.png" alt="">
+    <img class="ny-logo" src="images/nytimes.png" alt="Logo de New York Times">
+    <img src="images/wikipedia.jpg" alt="Logo de Wikipedia">
   </div>
-</section>
-
-<footer class="general-footer">
+ </section>
+</main>
+ <footer class="general-footer">
 
   <ul class="footer-wrapper">
     <li class="footer-list-wrapper">
@@ -120,10 +120,10 @@
 
     <li class="footer-list-wrapper">
      <p class="footer-text">OSW</p>
-     <a href="https://twitter.com/os_weekends" alt="Logo de twitter">
-      <img src="images/icono.png" class="logo-footer">
+     <a href="https://twitter.com/os_weekends" target="_blank">
+      <img src="images/icono.png" class="logo-footer" alt="Logo de twitter">
      </a>
-     <a href="http://osweekends.com/">
+     <a href="http://osweekends.com/" target="_blank">
       <img src="images/link.png" alt="Logo de link" class="logo-footer">
      </a>
 
@@ -131,14 +131,14 @@
 
     <li class="footer-list-wrapper">
      <p class="footer-text">Adalab</p>
-     <a href="https://twitter.com/AdaLab_Digital" alt="Logo de twitter">
-      <img src="images/icono.png" class="logo-footer">
+     <a href="https://twitter.com/AdaLab_Digital" target="_blank" >
+      <img src="images/icono.png" class="logo-footer" alt="Logo de twitter">
      </a>
-     <a href="http://adalab.es/">
+     <a href="http://adalab.es/" target="_blank">
       <img src="images/link.png" alt="Logo de link" class="logo-footer">
      </a>
     </li>
-    Meetup 11 Mayo 2017  &copy;
+    <p class="copy"> &copy; Meetup 11 Mayo 2017</p>
   </ul>
 </footer>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
