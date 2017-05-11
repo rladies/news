@@ -4,8 +4,9 @@ body{
 
 h1{
 	font-family: 'Merriweather', serif;
-	color: black;
-	padding-right: 425px;
+	font-size: 100px;
+	color: grey;
+	padding-right: 215px;
 }
 
 
@@ -13,7 +14,7 @@ h1{
  display: flex;
  align-items: center;
  justify-content: flex-end;
- background-color: white;
+ margin-top: 50px;
  height: 100px;
 }
 
@@ -25,22 +26,33 @@ h1{
 
 .trademark{
  display: flex;
- justify-content: space-between;
+ justify-content: space-around;
 }
 
-.logo{
- width: 300px;
- height: 150px;
+.personal-wrapper{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.team1, .team2{
+.rladies-logo{
+	width: 150px;
+}
+
+.adalab-logo{
+	margin-top: 50px;
+}
+
+.team{
  display: flex;
  justify-content: space-around;
+ margin-top: 150px;
 
 }
 
 .personal-info{
  max-width: 200px;
+ text-align: center;
 }
 
 .profile-picture {
@@ -52,28 +64,25 @@ h1{
  border-radius: 50%;
 }
 
-.team{
- margin: 100px 0;
-}
-
 .info-logo{
  display: flex;
  justify-content: space-around;
 }
 
-.ny-logo, .wikipedia-logo{
- width: 300px;
- height: 250px;
+.info{
+	margin-top: 130px;
 }
-
 .section-title{
  text-transform: uppercase;
  text-align: center;
- color: #B404AE;
+ color: grey;
+ font-size: 30px;
+ font-weight: bold;
 }
 
 .general-footer{
- background-color: white;
+ background-color: grey;
+ margin-top: 100px;
 }
 
 .footer-wrapper{
@@ -97,15 +106,20 @@ h1{
 }
 
 .footer-text{
+ color: white;
  margin: 0 auto;
  margin-right: 25px;
  font-size: 15px;
 }
 
-#team {
- background-color: white;
+.copy{
+color: white;
 }
 
-#info{
- background-color: white;
+.general-team{
+	margin-top:130px;
+}
+
+#notices{
+	margin-top: 100px;
 }
