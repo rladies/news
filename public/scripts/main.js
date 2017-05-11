@@ -1,13 +1,16 @@
 var oReq = new XMLHttpRequest()
 oReq.addEventListener("load", reqListener)
-  oReq.open("GET", "http://news.osweekends.com/api/v1/news")
+  oReq.open("GET", "/api/v1/news")
+
 oReq.send()
 
 function sentimentBars(sentiment){
-  if (sentiment < 0 ) return "rgba(255, 99, 132, 0.5)";
-  if (sentiment > 0) return 'rgba(75, 192, 192, 0.5)';
 
-  return 'rgba(255, 159, 64, 0.5)';
+  if (sentiment < 0 ) return "rgba(255, 99, 132, 0.2)";
+  if (sentiment > 0) return 'rgba(75, 192, 192, 0.2)';
+
+  return 'rgba(255, 159, 64, 0.2)';
+
 }
 
 
@@ -33,6 +36,8 @@ function reqListener () {
   for (var i = 0; i < data.length; i++) {
     titles.push(data[i].titulo);
     backgroundColors.push(sentimentBars(data[i].sentiment_value));
+
+    borderColors.push('rgba(255,99,132,1)')
     numVis.push(stimateVisits(data[i].visitas));
   }
   
