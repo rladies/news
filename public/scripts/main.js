@@ -17,7 +17,7 @@ function sentimentBars(sentiment){
 function stimateVisits (rawVisits) {
     var total = 0
     rawVisits.forEach(function(row){
-        console.log(row)
+        //console.log(row)
         if(row.valores && row.valores.length === 60){
             total += parseInt(row.valores[59])
         }
@@ -28,7 +28,7 @@ function stimateVisits (rawVisits) {
 
 function reqListener () {
     var data = JSON.parse(this.responseText);
-    var texthtml = "";
+    //var texthtml = "";
     var titles = [];
     var backgroundColors = [];
     var borderColors = [];
