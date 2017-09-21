@@ -83,6 +83,7 @@ getTagNoticia<-function(midata){
   no2<-gsub("\\(", " ", no2)
   no2<-gsub(" ", "+", no2)
   tags<-unlist(strsplit(no2,";"))
+  truncate <- dbSendQuery(mydb, "TRUNCATE TABLE articulo")
   query<-dbSendQuery(mydb, paste0("insert into articulo (fecha, titulo, texto_noticia, url)  values ('",fecha,"', '",midata[2],"','",midata[3],"','",midata[4],"');"))
   #Nos quedamos con el id
   query<-dbSendQuery(mydb,"SELECT id_noticia FROM articulo ORDER BY id_noticia DESC LIMIT 1;")
@@ -90,10 +91,8 @@ getTagNoticia<-function(midata){
   res_tags<-unlist(lapply(tags, FUN=getInfotag, fecha=fecha))
   sapply(res_tags, FUN=insertTag, id_not=id_not)
   res_tags
-  
+
 }
 
 
 re<-apply(data,1,FUN=getTagNoticia)
-
-
