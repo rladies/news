@@ -1,125 +1,232 @@
-body{
-	font-family: 'BioRhyme', serif;
+body {
+  font-family: 'BioRhyme', serif;
 }
 
-h1{
-	font-family: 'Merriweather', serif;
-	font-size: 100px;
-	color: grey;
-	padding-right: 215px;
+/*TITLE*/
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 100px;
+  color: grey;
+  padding-right: 215px;
 }
 
-
-.primary-bar{
- display: flex;
- align-items: center;
- justify-content: flex-end;
- margin-top: 50px;
- height: 100px;
+.primary-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 50px;
+  height: 100px;
 }
 
-.elements-primary-bar{
- text-decoration: none;
- padding: 15px;
- color: grey;
-}
-
-.trademark{
- display: flex;
- justify-content: space-around;
-}
-
-.personal-wrapper{
-	display: flex;
+@media all and (max-width:1023px) {
+  .primary-bar {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    height: auto;
+  }
+  h1 {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 75px;
+  }
 }
 
-.rladies-logo{
-	width: 150px;
+@media all and (max-width:470px) {
+  h1 {
+    font-size: 50px;
+  }
 }
 
-.adalab-logo{
-	margin-top: 50px;
+.elements-primary-bar {
+  text-decoration: none;
+  padding: 15px;
+  color: grey;
 }
 
-.team{
- display: flex;
- justify-content: space-around;
- margin-top: 150px;
-
+/*LOGOS*/
+.trademark {
+  display: flex;
+  justify-content: space-around;
 }
 
-.personal-info{
- max-width: 200px;
- text-align: center;
+.personal-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rladies-logo {
+  width: 150px;
+}
+
+.adalab-logo {
+  margin-top: 50px;
+}
+
+/*TEAM*/
+.team {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 150px;
+}
+
+.personal-info {
+  max-width: 200px;
+  text-align: center;
 }
 
 .profile-picture {
- height: 200px;
- width: 200px;
- background-color: grey;
- background-size: cover;
- background-position: center;
- border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  background-color: grey;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
 }
 
-.info-logo{
- display: flex;
- justify-content: space-around;
+@media all and (max-width:800px) {
+  .team {
+    justify-content: center;
+    margin-top: 75px;
+  }
+  .team h3 {
+    text-align: center;
+    margin-bottom: 0;
+    min-height: 58px;
+  }
+  .personal-wrapper {
+    width: 150px;
+    margin: 0 15px;
+  }
+  .personal-wrapper a {
+    display: block;
+    width: 100%;
+  }
+  .profile-picture {
+    height: 150px;
+    width: 100%;
+  }
 }
 
-.info{
-	margin-top: 130px;
-}
-.section-title{
- text-transform: uppercase;
- text-align: center;
- color: grey;
- font-size: 30px;
- font-weight: bold;
-}
-
-.general-footer{
- background-color: grey;
- margin-top: 100px;
-}
-
-.footer-wrapper{
- padding: 15px;
- display: flex;
- align-items: center;
- justify-content: space-around;
-}
-
-.footer-list-wrapper{
- padding: 0;
- list-style: none;
- display: flex;
- justify-content: space-around;
- align-items: center;
-}
-
-.logo-footer{
- width: 25px;
- padding-right: 15px;
+@media all and (max-width:650px) {
+  .team {
+    justify-content: center;
+    margin-top: 0;
+    flex-direction: column;
+  }
+  .trademark {
+    flex-direction: column;
+  }
+  .trademark a {
+    text-align: center;
+  }
+  .personal-wrapper {
+    margin: 50px auto 0;
+    width: 250px;
+  }
+  .personal-wrapper h3 {
+    min-height: auto;
+  }
+  .personal-wrapper p {
+    margin-bottom: 0;
+  }
+  .profile-picture {
+    width: 150px;
+    margin: 0 auto;
+  }
+  .personal-info {
+    max-width: 100%;
+  }
 }
 
-.footer-text{
- color: white;
- margin: 0 auto;
- margin-right: 25px;
- font-size: 15px;
+.info-logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 
-.copy{
-color: white;
+.info {
+  margin-top: 130px;
 }
 
-.general-team{
-	margin-top:130px;
+.section-title {
+  text-transform: uppercase;
+  text-align: center;
+  color: grey;
+  font-size: 30px;
+  font-weight: bold;
 }
 
-#notices{
-	margin-top: 100px;
+@media all and (max-width:767px) {
+  .info-logo {
+    padding: 0 20px;
+  }
+  .info-logo img {
+    height: auto;
+    max-width: 25%;
+  }
+  .info-logo .ny-logo {
+    height: auto;
+    max-width: 70%;
+  }
+}
+
+/*FOOTER*/
+.general-footer {
+  background-color: grey;
+  margin-top: 100px;
+}
+
+.footer-wrapper {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer-list-wrapper {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo-footer {
+  width: 25px;
+  padding-right: 15px;
+}
+
+.footer-text {
+  color: white;
+  margin: 0 auto;
+  margin-right: 25px;
+  font-size: 15px;
+}
+
+.copy {
+  color: white;
+}
+
+@media all and (max-width:740px) {
+  .footer-wrapper {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+  .copy {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+.general-team {
+  margin-top: 130px;
+}
+
+#notices {
+  margin-top: 100px;
 }

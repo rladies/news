@@ -21,7 +21,7 @@ function stimateVisits (rawVisits) {
         if(row.valores && row.valores.length === 60){
             total += parseInt(row.valores[59])
         }
-    
+
     })
     return total;
 }
@@ -39,7 +39,7 @@ function reqListener () {
         borderColors.push('rgba(255,99,132,1)')
         numVis.push(stimateVisits(data[i].visitas));
     }
-  
+
     var ctx = document.getElementById("myChart");
 
     var data = {

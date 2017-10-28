@@ -1,0 +1,9 @@
+{
+    "path" : "~/Documents/news/Recopile_data",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
