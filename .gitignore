@@ -122,6 +122,7 @@ Temporary Items
 
 # RStudio files
 *.Rproj
+.Rproj.user/
 
 # produced vignettes
 vignettes/*.html
