@@ -22,8 +22,8 @@ CREATE TABLE articulo (
 	titulo varchar(200),
 	texto_noticia varchar(5000),
 	url varchar(200),
-	sentiment_value int,
-	name_tag_scale int,
+	sentiment_value float,
+	name_tag_scale float,
 	primary key (id_noticia)
 );
 

@@ -161,3 +161,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/r,osx,windows,node,linux
+.Rproj.user

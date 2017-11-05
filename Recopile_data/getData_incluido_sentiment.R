@@ -15,9 +15,9 @@ api_key <- args[1]
 
 # Get 20 most viewed news and keep date, title, abstract, url, tags
 twenty_news <- GET(paste0("https://api.nytimes.com/svc/mostpopular/v2/mostviewed/World/1.json?api-key=", api_key))
-news <- content(twenty_news)$results %>%
+news <- as.data.frame(content(twenty_news)$results %>%
     map_df(magrittr::extract,
-           c("published_date", "title", "abstract", "url", "adx_keywords"))
+           c("published_date", "title", "abstract", "url", "adx_keywords")))
 
 
 # Connect to DB
@@ -27,7 +27,6 @@ dbSendQuery(mydb, "TRUNCATE TABLE articulo")
 dbSendQuery(mydb, "TRUNCATE TABLE tags")
 
 getInfotag <- function(tag) {
-  cat(paste(tag, '\n'))
 
   # Petition to get visits on the tag
   wiki_tags <- GET(paste0("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageviews&titles=", tag))
@@ -43,8 +42,6 @@ getInfotag <- function(tag) {
 
 
 insertTag <- function(tag, id_news) {
-  cat(paste0("INSERT INTO tags (id_noticia, visitas, name_tag) VALUES ('",
-             id_news, "', '", tag[2], "','",tag[1],"');"))
   query <- dbSendQuery(mydb,
                        paste0("INSERT INTO tags (id_noticia, visitas, name_tag) VALUES ('",
                               id_news, "', '", tag[2], "','",tag[1],"');"))
@@ -52,7 +49,6 @@ insertTag <- function(tag, id_news) {
 
 
 getTagNoticia <- function(line) {
-  cat(paste(line, '\n'))
   tags <- line[5] %>%
     str_split(";") %>%
     map(str_extract, boundary("word")) %>%
