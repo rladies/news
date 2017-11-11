@@ -1,5 +1,7 @@
 # WikiNews
 
+[WEBSITE](http://wikinews.osweekends.com/)
+
 WikiNews es un proyecto piloto de colaboración entre tres comunidades de tecnología de Madrid: AdaLab, Open Source Weekends y R-Ladies Madrid.
 
 El objetivo de la aplicación es ver la relevancia de las noticias más importantes del New York Time en la Wikipedia.
